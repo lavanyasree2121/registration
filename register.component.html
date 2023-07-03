@@ -1,0 +1,41 @@
+<div class="card w-50 mx-auto mt-4">
+    <div class="card-header text-center  head" ><h1>Registration</h1></div>
+    <div class="card-body body">
+        <form [formGroup]="regform">
+            <div class="form-group">
+                username:
+                <input type="text" class="form-control" formControlName="uname">
+                <div *ngIf="(regform.controls['uname']?.touched && regform.get('uname')?.hasError('required'))" class="text-danger">User is required
+                </div>
+                </div>
+                <div class="form-group">
+                    email:
+                    <input type="email" class="form-control" formControlName="email">
+                    <div *ngIf="(regform.controls['email']?.touched && regform.get('email')?.hasError('required'))" class="text-danger">email is required
+                    </div>
+            </div>
+            <div class="form-group">
+                password:
+                <input type="text" class="form-control" formControlName="password">
+                <div *ngIf="(regform.controls['password']?.touched && regform.get('password')?.hasError('required'))" class="text-danger">password is required
+                </div>
+                <div *ngIf="(regform.controls['password']?.touched && regform.get('password')?.hasError('minlength'))" class="text-danger">password must be 8 
+                </div>
+        </div>
+        <div class="form-group">
+            confirmpassword:
+            <input type="text" class="form-control" formControlName="confirmpassword">
+            <div *ngIf="(regform.controls['confirmpassword']?.touched && regform.get('confirmpassword')?.hasError('misMatch'))">Password Doesn't Match
+            </div>
+            </div>
+            <label>Gender</label>
+           <label> <input type="radio" formControlName="gender" name="gender" value="F">female</label>
+           <label> <input type="radio" formControlName="gender" name="gender" value="M">male</label>
+        <div>
+            <label><input type="checkbox" formControlName="subscribe">subscribe</label>
+        </div>
+            <button class="btn btn-primary text-center" (click)="show()" [disabled]="!regform.valid">register</button>
+        </form>
+        </div>
+    </div>
+

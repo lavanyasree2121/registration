@@ -1,0 +1,13 @@
+.invalid{
+    color:red;
+}
+.head{
+    background-color: blueviolet;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.body{
+    background-color: bisque;
+}
+.btn{
+    margin-left:300px;
+}
